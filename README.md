@@ -6,25 +6,17 @@ The analysis and modeling are performed in the `Notebooks/Heart_disease.ipynb` J
 
 ## Feature Selection
 
-To build a robust and efficient model, a feature selection process was undertaken to identify the most influential attributes. This process helps in reducing model complexity, improving training speed, and potentially increasing prediction accuracy by focusing on the most relevant data.
-
-The selection was primarily guided by two key analyses:
-
-1.  **Correlation Analysis**: A correlation matrix was generated to examine the relationships between all the features and the target variable (`condition`). Features that showed a strong positive or negative correlation with the target were considered important candidates.
-
-2.  **Feature Importance from Random Forest**: A Random Forest Classifier was trained on the full dataset. The `feature_importances_` attribute of the trained model was then used to rank features based on their contribution to the model's predictive power.
+The most influential features for the model were identified using correlation analysis and the feature importance scores from a Random Forest model. This helps create a more efficient and interpretable model.
 
 ### Key Features Chosen
 
-Based on the analysis, the following features were identified as the most important for predicting heart disease:
+The following features were selected as the most predictive for heart disease:
 
-*   **`thal` (Thalassemia)**: This feature consistently showed up as one of the most significant predictors in the Random Forest feature importance plot. Thalassemia is a blood disorder, and certain types are strongly linked to heart complications.
-*   **`thalach` (Maximum Heart Rate Achieved)**: The analysis revealed a strong negative correlation between the maximum heart rate achieved during exercise and the presence of heart disease. Lower maximum heart rates were associated with a higher likelihood of heart disease.
-*   **`cp` (Chest Pain Type)**: Different types of chest pain are critical indicators of heart problems. This feature had a high correlation with the final condition.
-*   **`exang` (Exercise Induced Angina)**: The presence of angina (chest pain) induced by exercise is a classic symptom of heart disease, making it a crucial predictive feature.
-*   **`oldpeak` (ST Depression Induced by Exercise)**: This is a measurement from an ECG that indicates stress on the heart during exercise. It was found to be a significant predictor.
-
-By focusing on these key features, we can build a more interpretable and efficient model without a significant loss in accuracy, as demonstrated by the model performance comparisons in the notebook.
+*   **`thal` (Thalassemia)**: A blood disorder strongly linked to heart complications.
+*   **`thalach` (Maximum Heart Rate Achieved)**: Lower maximum heart rates are associated with a higher likelihood of heart disease.
+*   **`cp` (Chest Pain Type)**: A critical indicator of heart problems.
+*   **`exang` (Exercise Induced Angina)**: A classic symptom of heart disease.
+*   **`oldpeak` (ST Depression Induced by Exercise)**: An ECG measurement indicating heart stress.
 
 ## Model Performance
 
